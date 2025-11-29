@@ -6,10 +6,6 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="me.elabee.idea.drupal.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="me.elabee.idea.drupal.startup.MyProjectActivity" />
     </extensions>
 </idea-plugin>
