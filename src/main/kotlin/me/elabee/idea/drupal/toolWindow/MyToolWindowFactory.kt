@@ -1,4 +1,4 @@
-package com.github.el7cosmos.drupalidea.toolWindow
+package me.elabee.idea.drupal.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.el7cosmos.drupalidea.MyBundle
-import com.github.el7cosmos.drupalidea.services.MyProjectService
+import me.elabee.idea.drupal.MyBundle
+import me.elabee.idea.drupal.services.MyProjectService
 import javax.swing.JButton
 
 

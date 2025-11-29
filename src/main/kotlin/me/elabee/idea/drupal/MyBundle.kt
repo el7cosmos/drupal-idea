@@ -1,4 +1,4 @@
-package com.github.el7cosmos.drupalidea
+package me.elabee.idea.drupal
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

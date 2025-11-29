@@ -1,9 +1,9 @@
-package com.github.el7cosmos.drupalidea.services
+package me.elabee.idea.drupal.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.el7cosmos.drupalidea.MyBundle
+import me.elabee.idea.drupal.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

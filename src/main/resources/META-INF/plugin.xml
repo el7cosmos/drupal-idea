@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.el7cosmos.drupalidea</id>
-    <name>drupal-idea</name>
+    <id>me.elabee.idea.drupal</id>
+    <name>Drupal Idea</name>
     <vendor>el7cosmos</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,7 +9,7 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.el7cosmos.drupalidea.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.el7cosmos.drupalidea.startup.MyProjectActivity" />
+        <toolWindow factoryClass="me.elabee.idea.drupal.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <postStartupActivity implementation="me.elabee.idea.drupal.startup.MyProjectActivity" />
     </extensions>
 </idea-plugin>

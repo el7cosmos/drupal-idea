@@ -1,4 +1,4 @@
-package com.github.el7cosmos.drupalidea.startup
+package me.elabee.idea.drupal.startup
 
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
