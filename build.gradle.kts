@@ -160,11 +160,8 @@ intellijPlatformTesting {
     }
 }
 
-val drupalVersion = providers.gradleProperty("drupalVersion").get()
-val drupalTestDataDir = layout.projectDirectory.dir("src/test/testData/drupal")
-
 val downloadDrupal = tasks.register<Download>("downloadDrupal") {
-    src("https://ftp.drupal.org/files/projects/drupal-${drupalVersion}.tar.gz")
+    src("https://ftp.drupal.org/files/projects/drupal-${providers.gradleProperty("drupalVersion").get()}.tar.gz")
     dest(layout.buildDirectory.file("tmp/drupal.tar.gz"))
     overwrite(false)
     onlyIfModified(true)
@@ -178,6 +175,8 @@ val verifyDrupal = tasks.register<Verify>("verifyDrupal") {
 }
 
 val extractDrupal = tasks.register<Copy>("extractDrupal") {
+    val drupalTestDataDir = layout.projectDirectory.dir("src/test/testData/drupal")
+
     dependsOn(verifyDrupal)
     inputs.file(downloadDrupal.get().dest)
     outputs.dir(drupalTestDataDir)
