@@ -11,5 +11,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <fileBasedIndex implementation="me.elabee.idea.drupal.theme.DrupalComponentIndex"/>
+        <psi.referenceContributor language="PHP" implementation="me.elabee.idea.drupal.DrupalReferenceContributor"/>
     </extensions>
 </idea-plugin>
