@@ -11,7 +11,7 @@ import com.intellij.util.Processor
 import com.intellij.util.indexing.FileBasedIndex
 import com.jetbrains.twig.elements.TwigElementTypes
 import fr.adrienbrault.idea.symfony2plugin.templating.TwigPattern
-import me.elabee.idea.drupal.theme.DrupalComponentIndex
+import me.elabee.idea.drupal.indexing.DrupalIndexIds
 
 class DrupalTwigGotoDeclarationHandler : GotoDeclarationHandler {
     override fun getGotoDeclarationTargets(sourceElement: PsiElement?, offset: Int, editor: Editor?): Array<PsiElement> {
@@ -39,7 +39,7 @@ class DrupalTwigGotoDeclarationHandler : GotoDeclarationHandler {
         val elements = mutableListOf<PsiFile>()
 
         FileBasedIndex.getInstance().getFilesWithKey(
-            DrupalComponentIndex.NAME,
+            DrupalIndexIds.Component,
             setOf(sourceElement.text),
             Processor {
                 val twig = it.parent.findChild("$component.twig") ?: return@Processor true

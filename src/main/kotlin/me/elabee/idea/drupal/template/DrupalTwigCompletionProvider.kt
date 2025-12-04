@@ -15,7 +15,7 @@ import com.intellij.util.ProcessingContext
 import com.intellij.util.Processor
 import com.intellij.util.indexing.FileBasedIndex
 import fr.adrienbrault.idea.symfony2plugin.templating.TemplateLookupElement
-import me.elabee.idea.drupal.theme.DrupalComponentIndex
+import me.elabee.idea.drupal.indexing.DrupalIndexIds
 
 class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() {
     companion object {
@@ -41,10 +41,10 @@ class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() 
                 val elements = mutableSetOf<TemplateLookupElement>()
 
                 index.processAllKeys(
-                    DrupalComponentIndex.NAME,
+                    DrupalIndexIds.Component,
                     { name ->
                         index.processFilesContainingAllKeys(
-                            DrupalComponentIndex.NAME,
+                            DrupalIndexIds.Component,
                             setOf(name),
                             GlobalSearchScope.allScope(project),
                             null,
@@ -61,7 +61,7 @@ class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() 
 
                 CachedValueProvider.Result.create(
                     elements,
-                    ModificationTracker { index.getIndexModificationStamp(DrupalComponentIndex.NAME, project) },
+                    ModificationTracker { index.getIndexModificationStamp(DrupalIndexIds.Component, project) },
                 )
             },
             false,

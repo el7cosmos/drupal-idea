@@ -13,6 +13,7 @@ import com.intellij.util.io.EnumeratorStringDescriptor
 import com.intellij.util.io.IOUtil
 import com.intellij.util.io.KeyDescriptor
 import com.jetbrains.php.drupal.DrupalFeatureUsageProvider
+import me.elabee.idea.drupal.indexing.DrupalIndexIds
 import me.elabee.idea.drupal.theme.component.DrupalComponentMetadata
 import org.jetbrains.yaml.YAMLFileType
 import org.jetbrains.yaml.psi.YAMLFile
@@ -22,11 +23,7 @@ import java.io.DataOutput
 import java.util.Collections
 
 class DrupalComponentIndex : FileBasedIndexExtension<String, DrupalComponentMetadata>() {
-    companion object {
-        val NAME = ID.create<String, DrupalComponentMetadata>("me.elabee.idea.drupal.theme.component")
-    }
-
-    override fun getName(): ID<String, DrupalComponentMetadata> = NAME
+    override fun getName(): ID<String, DrupalComponentMetadata> = DrupalIndexIds.Component
 
     override fun getInputFilter(): FileBasedIndex.InputFilter = DrupalComponentInputFilter
 

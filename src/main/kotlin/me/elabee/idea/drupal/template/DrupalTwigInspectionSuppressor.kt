@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.util.indexing.FileBasedIndex
 import com.jetbrains.twig.elements.TwigElementTypes
 import fr.adrienbrault.idea.symfony2plugin.templating.TwigPattern
-import me.elabee.idea.drupal.theme.DrupalComponentIndex
+import me.elabee.idea.drupal.indexing.DrupalIndexIds
 
 class DrupalTwigInspectionSuppressor : InspectionSuppressor {
     override fun isSuppressedFor(element: PsiElement, toolId: String): Boolean {
@@ -26,7 +26,7 @@ class DrupalTwigInspectionSuppressor : InspectionSuppressor {
             return false
         }
 
-        return FileBasedIndex.getInstance().getAllKeys(DrupalComponentIndex.NAME, element.project).contains(element.text)
+        return FileBasedIndex.getInstance().getAllKeys(DrupalIndexIds.Component, element.project).contains(element.text)
     }
 
     override fun getSuppressActions(element: PsiElement?, toolId: String): Array<SuppressQuickFix> {
