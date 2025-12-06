@@ -9,7 +9,17 @@
     <depends>com.jetbrains.php.drupal</depends>
     <depends optional="true" config-file="symfony.xml">fr.adrienbrault.idea.symfony2plugin</depends>
 
+    <resource-bundle>messages.DrupalToolkitBundle</resource-bundle>
+
     <extensions defaultExtensionNs="com.intellij">
         <fileBasedIndex implementation="me.elabee.idea.drupal.theme.DrupalComponentIndex"/>
+        <psi.referenceContributor language="PHP" implementation="me.elabee.idea.drupal.DrupalReferenceContributor"/>
+        <localInspection language="PHP"
+                         implementationClass="me.elabee.idea.drupal.theme.DrupalUnresolvedComponentInspection"
+                         key="inspection.drupal.unresolved.component.display.name"
+                         groupPath="Drupal"
+                         groupKey="inspection.drupal.unresolved.component.group.name"
+                         enabledByDefault="true"
+                         level="WARNING"/>
     </extensions>
 </idea-plugin>

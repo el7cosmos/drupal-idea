@@ -24,9 +24,22 @@
 
 ### Single Directory Component (SDC) Integration
 
-- Provide completion
-  for [using component in Twig](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components/using-your-new-single-directory-component#s-using-your-component-in-twig-template).
-- Provide a goto symbol for using component in Twig.
+- Provide completion for SDC namespace in twig file and in render array:
+    ```twig
+    {{ include('<caret>') }}
+    {% embed '<caret>' %}
+    {% include '<caret>' %}
+    ```
+    ```php
+    <?php
+  
+    $build = [
+      '#type' => 'component',
+      '#component' => '<caret>',
+    ];
+    ```
+
+- Provide a goto symbol in twig files and in render array, allows ease of navigation by clicking the component's name.
 - Provide variables for slots and props in the component's Twig file.
 
 > **Drupal is a registered trademark of Dries Buytaert.**
