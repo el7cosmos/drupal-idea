@@ -29,6 +29,8 @@
 - Provide a goto symbol for using component in Twig.
 - Provide variables for slots and props in the component's Twig file.
 
+> **Drupal is a registered trademark of Dries Buytaert.**
+
 <!-- Plugin description end -->
 
 ## Installation
