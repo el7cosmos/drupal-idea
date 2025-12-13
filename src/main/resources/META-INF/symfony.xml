@@ -8,6 +8,7 @@
     </extensions>
 
     <extensions defaultExtensionNs="fr.adrienbrault.idea.symfony2plugin">
+        <extension.TwigNamespaceExtension implementation="me.elabee.idea.drupal.template.DrupalTwigNamespaceExtension"/>
         <extension.TwigVariableCollector implementation="me.elabee.idea.drupal.template.DrupalTwigVariableCollector"/>
     </extensions>
 </idea-plugin>

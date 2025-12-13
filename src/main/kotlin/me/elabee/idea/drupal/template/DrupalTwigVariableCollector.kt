@@ -9,7 +9,7 @@ class DrupalTwigVariableCollector : TwigFileVariableCollector {
     override fun collect(parameter: TwigFileVariableCollectorParameter, variables: MutableMap<String, Set<String>>) {
         val twigFile = parameter.element.containingFile
         val component = (twigFile.parent ?: return).findFile("${twigFile.virtualFile.nameWithoutExtension}.component.yml") ?: return
-        FileBasedIndex.getInstance().getFileData(DrupalIndexIds.Component, component.virtualFile, parameter.project).forEach {
+        FileBasedIndex.getInstance().getFileData(DrupalIndexIds.component, component.virtualFile, parameter.project).forEach {
             it.value.slots.forEach { (name, type) -> variables[name] = setOf(type) }
             it.value.props.forEach { (name, type) -> variables[name] = setOf(type) }
         }

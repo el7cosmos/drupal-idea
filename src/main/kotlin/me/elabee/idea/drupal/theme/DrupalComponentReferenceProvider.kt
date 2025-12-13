@@ -54,7 +54,7 @@ class DrupalComponentReferenceProvider : PsiReferenceProvider() {
             // Find files that contain this component key
             val files = mutableListOf<ResolveResult>()
             index.processFilesContainingAllKeys(
-                DrupalIndexIds.Component, listOf(componentKey), GlobalSearchScope.allScope(project), null,
+                DrupalIndexIds.component, listOf(componentKey), GlobalSearchScope.allScope(project), null,
             ) { yamlFile ->
                 val componentDir = yamlFile.parent
                 val componentName = yamlFile.nameWithoutExtension.removeSuffix(".component")
@@ -75,7 +75,7 @@ class DrupalComponentReferenceProvider : PsiReferenceProvider() {
             val variants = mutableListOf<LookupElementBuilder>()
 
             FileBasedIndex.getInstance().processAllKeys(
-                DrupalIndexIds.Component,
+                DrupalIndexIds.component,
                 { key ->
                     variants.add(
                         LookupElementBuilder.create(key).withIcon(TwigIcons.TwigFileIcon).bold(),

@@ -7,7 +7,7 @@ class DrupalComponentIndexTest : DrupalComponentTestCase() {
 
     fun `test index accepts valid component`() {
         val fileBasedIndex = FileBasedIndex.getInstance()
-        val keys = fileBasedIndex.getAllKeys(DrupalIndexIds.Component, project)
+        val keys = fileBasedIndex.getAllKeys(DrupalIndexIds.component, project)
         assertNotEmpty(keys)
         assertContainsElements(keys, COMPONENTS)
     }

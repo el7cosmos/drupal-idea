@@ -7,6 +7,7 @@
 ### Added
 
 - Declare `settings.php` predefined variables
+- Twig namespace support for twig files under `<module|theme>/templates` directory
 
 ## [0.1.0] - 2025-12-06
 

@@ -28,7 +28,7 @@ class DrupalUnresolvedComponentInspection : LocalInspectionTool() {
 
                 // Check if the component exists
                 val values = FileBasedIndex.getInstance().getValues(
-                    DrupalIndexIds.Component,
+                    DrupalIndexIds.component,
                     componentKey,
                     GlobalSearchScope.allScope(expression.project),
                 )

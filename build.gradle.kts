@@ -78,9 +78,7 @@ intellijPlatform {
         changeNotes = providers.gradleProperty("pluginVersion").map { pluginVersion ->
             with(changelog) {
                 renderItem(
-                    (getOrNull(pluginVersion) ?: getUnreleased())
-                        .withHeader(false)
-                        .withEmptySections(false),
+                    (getOrNull(pluginVersion) ?: getUnreleased()).withHeader(false).withEmptySections(false),
                     Changelog.OutputType.HTML,
                 )
             }
@@ -102,7 +100,9 @@ intellijPlatform {
         // The pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
         // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:
         // https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html#specifying-a-release-channel
-        channels = providers.gradleProperty("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
+        channels = providers.gradleProperty("pluginVersion").map {
+            listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" })
+        }
     }
 
     pluginVerification {

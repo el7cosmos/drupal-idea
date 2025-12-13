@@ -23,7 +23,7 @@ import java.io.DataOutput
 import java.util.Collections
 
 class DrupalComponentIndex : FileBasedIndexExtension<String, DrupalComponentMetadata>() {
-    override fun getName(): ID<String, DrupalComponentMetadata> = DrupalIndexIds.Component
+    override fun getName(): ID<String, DrupalComponentMetadata> = DrupalIndexIds.component
 
     override fun getInputFilter(): FileBasedIndex.InputFilter = DrupalComponentInputFilter
 

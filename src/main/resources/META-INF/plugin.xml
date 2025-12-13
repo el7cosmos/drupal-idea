@@ -12,6 +12,7 @@
     <resource-bundle>messages.DrupalToolkitBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
+        <fileBasedIndex implementation="me.elabee.idea.drupal.core.extension.DrupalExtensionIndex"/>
         <fileBasedIndex implementation="me.elabee.idea.drupal.theme.DrupalComponentIndex"/>
         <psi.referenceContributor language="PHP" implementation="me.elabee.idea.drupal.DrupalReferenceContributor"/>
         <localInspection language="PHP"

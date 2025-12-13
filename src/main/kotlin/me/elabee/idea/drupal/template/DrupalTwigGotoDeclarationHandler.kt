@@ -39,7 +39,7 @@ class DrupalTwigGotoDeclarationHandler : GotoDeclarationHandler {
         val elements = mutableListOf<PsiFile>()
 
         FileBasedIndex.getInstance().getFilesWithKey(
-            DrupalIndexIds.Component,
+            DrupalIndexIds.component,
             setOf(sourceElement.text),
             Processor {
                 val twig = it.parent.findChild("$component.twig") ?: return@Processor true

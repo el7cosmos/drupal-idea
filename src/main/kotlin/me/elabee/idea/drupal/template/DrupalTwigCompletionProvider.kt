@@ -19,7 +19,7 @@ import me.elabee.idea.drupal.indexing.DrupalIndexIds
 
 class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() {
     companion object {
-        val KEY: Key<CachedValue<Set<TemplateLookupElement>>> = Key("DRUPAL_TWIG_COMPONENT_CACHE")
+        val key: Key<CachedValue<Set<TemplateLookupElement>>> = Key("DRUPAL_TWIG_COMPONENT_CACHE")
     }
 
     override fun addCompletions(
@@ -35,16 +35,16 @@ class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() 
 
         return CachedValuesManager.getManager(project).getCachedValue(
             project,
-            KEY,
+            key,
             {
                 val index = FileBasedIndex.getInstance()
                 val elements = mutableSetOf<TemplateLookupElement>()
 
                 index.processAllKeys(
-                    DrupalIndexIds.Component,
+                    DrupalIndexIds.component,
                     { name ->
                         index.processFilesContainingAllKeys(
-                            DrupalIndexIds.Component,
+                            DrupalIndexIds.component,
                             setOf(name),
                             GlobalSearchScope.allScope(project),
                             null,
@@ -61,7 +61,7 @@ class DrupalTwigCompletionProvider : CompletionProvider<CompletionParameters>() 
 
                 CachedValueProvider.Result.create(
                     elements,
-                    ModificationTracker { index.getIndexModificationStamp(DrupalIndexIds.Component, project) },
+                    ModificationTracker { index.getIndexModificationStamp(DrupalIndexIds.component, project) },
                 )
             },
             false,

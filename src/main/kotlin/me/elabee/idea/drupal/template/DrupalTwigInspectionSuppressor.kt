@@ -26,7 +26,7 @@ class DrupalTwigInspectionSuppressor : InspectionSuppressor {
             return false
         }
 
-        return FileBasedIndex.getInstance().getAllKeys(DrupalIndexIds.Component, element.project).contains(element.text)
+        return FileBasedIndex.getInstance().getAllKeys(DrupalIndexIds.component, element.project).contains(element.text)
     }
 
     override fun getSuppressActions(element: PsiElement?, toolId: String): Array<SuppressQuickFix> {
